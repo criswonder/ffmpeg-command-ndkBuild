@@ -1,7 +1,7 @@
 LOCAL_PATH:= $(call my-dir)
 
-INCLUDE_PATH:=/home/yhao/sf/ffmpeg-3.3.3/Android/arm/include
-FFMPEG_LIB_PATH:=/home/yhao/sf/ffmpeg-3.3.3/Android/arm/lib
+INCLUDE_PATH:=/Users/hongyun/dev/source/multi-media/ffmpeg-3.3.6/android/arm/include
+FFMPEG_LIB_PATH:=/Users/hongyun/dev/source/multi-media/ffmpeg-3.3.6/android/arm/lib
 
 include $(CLEAR_VARS)
 LOCAL_MODULE:= libavcodec
@@ -39,17 +39,17 @@ LOCAL_SRC_FILES:= $(FFMPEG_LIB_PATH)/libswresample-2.so
 LOCAL_EXPORT_C_INCLUDES := $(INCLUDE_PATH)
 include $(PREBUILT_SHARED_LIBRARY)
 
-include $(CLEAR_VARS)
-LOCAL_MODULE:= libpostproc
-LOCAL_SRC_FILES:= $(FFMPEG_LIB_PATH)/libpostproc-54.so
-LOCAL_EXPORT_C_INCLUDES := $(INCLUDE_PATH)
-include $(PREBUILT_SHARED_LIBRARY)
+# include $(CLEAR_VARS)
+# LOCAL_MODULE:= libpostproc
+# LOCAL_SRC_FILES:= $(FFMPEG_LIB_PATH)/libpostproc-54.so
+# LOCAL_EXPORT_C_INCLUDES := $(INCLUDE_PATH)
+# include $(PREBUILT_SHARED_LIBRARY)
 
-include $(CLEAR_VARS)
-LOCAL_MODULE:= libavdevice
-LOCAL_SRC_FILES:= $(FFMPEG_LIB_PATH)/libavdevice-57.so
-LOCAL_EXPORT_C_INCLUDES := $(INCLUDE_PATH)
-include $(PREBUILT_SHARED_LIBRARY)
+# include $(CLEAR_VARS)
+# LOCAL_MODULE:= libavdevice
+# LOCAL_SRC_FILES:= $(FFMPEG_LIB_PATH)/libavdevice-57.so
+# LOCAL_EXPORT_C_INCLUDES := $(INCLUDE_PATH)
+# include $(PREBUILT_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := ffmpeg
@@ -58,7 +58,7 @@ LOCAL_SRC_FILES := com_jni_FFmpegJni.c \
                   ffmpeg.c \
                   ffmpeg_opt.c \
                   ffmpeg_filter.c   
-LOCAL_C_INCLUDES := /home/yhao/sf/ffmpeg-3.3.3
+LOCAL_C_INCLUDES := /Users/hongyun/dev/source/multi-media/ffmpeg-3.3.6 
 LOCAL_LDLIBS := -lm -llog
-LOCAL_SHARED_LIBRARIES := libavcodec libavfilter libavformat libavutil libswresample libswscale libavdevice
+LOCAL_SHARED_LIBRARIES := libavcodec libavfilter libavformat libavutil libswresample libswscale
 include $(BUILD_SHARED_LIBRARY)
